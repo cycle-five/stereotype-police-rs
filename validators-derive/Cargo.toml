@@ -1,14 +1,14 @@
 [package]
 name = "validators-derive"
-version = "0.25.2"
+version = "0.25.3"
 authors = ["Magic Len <len@magiclen.org>"]
 edition = "2021"
 rust-version = "1.69"
-repository = "https://github.com/magiclen/validators"
+repository = "https://github.com/cycle-five/validators-rs"
 homepage = "https://magiclen.org/validators"
 keywords = ["validator", "validation", "user", "serde", "rocket"]
 categories = ["no-std", "parser-implementations", "value-formatting", "rust-patterns"]
-description = "The provided crate offers a procedural macro for defining validators, including optional parameters."
+description = "The provided crate offers a procedural macro for defining validators, including optional parameters. Forked from magiclen/validators."
 license = "MIT"
 include = ["src/**/*", "Cargo.toml", "README.md", "LICENSE"]
 
@@ -22,7 +22,7 @@ proc-macro2 = "1"
 
 enum-ordinalize = { version = "4.2", default-features = false, features = ["derive"] }
 
-educe = { version = "0.5", default-features = false, features = ["Debug"], optional = true }
+educe = { version = "0.6", default-features = false, features = ["Debug"], optional = true }
 phonenumber = { version = "0.3", optional = true }
 regex = { version = "1", optional = true }
 
@@ -69,3 +69,6 @@ rocket = []
 [package.metadata.docs.rs]
 all-features = true
 rustdoc-args = ["--cfg", "docsrs"]
+
+# [lints.rust]
+# unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_pointer_width = "128")'] }

@@ -1,14 +1,14 @@
 [package]
 name = "validators"
-version = "0.25.3"
-authors = ["Magic Len <len@magiclen.org>"]
+version = "0.25.4"
+authors = ["Magic Len <len@magiclen.org>", "Cycle Five <cycle.five@proton.me>"]
 edition = "2021"
 rust-version = "1.69"
-repository = "https://github.com/magiclen/validators"
+repository = "https://github.com/cycle-five/validators-rs"
 homepage = "https://magiclen.org/validators"
 keywords = ["validator", "validation", "user", "serde", "rocket"]
 categories = ["no-std", "parser-implementations", "value-formatting"]
-description = "This library is designed for validating and modeling user input. The crate includes models, functions, traits, errors, and other dependencies."
+description = "This library is designed for validating and modeling user input. The crate includes models, functions, traits, errors, and other dependencies. Forked from magiclen/validators."
 license = "MIT"
 include = ["src/**/*", "Cargo.toml", "README.md", "LICENSE"]
 
@@ -29,8 +29,8 @@ serde = { version = "1", default-features = false, features = ["alloc"], optiona
 rocket = { version = "0.5", default-features = false, optional = true }
 
 [dev-dependencies]
-lazy_static = "1.4"
-once_cell = "1.19"
+lazy_static = "1.5"
+once_cell = "1.20"
 
 [features]
 default = ["std", "all-validators", "derive"]
