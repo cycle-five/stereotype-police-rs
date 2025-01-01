@@ -10,6 +10,7 @@ use crate::{
 pub(crate) struct LineHandler;
 
 #[derive(Debug)]
+#[allow(dead_code)]
 pub struct Struct(TypeEnum);
 
 const ITEM: Struct = Struct(TypeEnum::String);

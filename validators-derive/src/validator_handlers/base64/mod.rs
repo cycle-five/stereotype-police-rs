@@ -10,6 +10,7 @@ use crate::{
 pub(crate) struct Base64Handler;
 
 #[derive(Debug)]
+#[allow(dead_code)]
 pub struct Struct(TypeEnum);
 
 const ITEM: Struct = Struct(TypeEnum::String);

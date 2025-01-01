@@ -6,17 +6,9 @@ pub trait ValidateSignedInteger: Sized {
 
     fn validate_i128(i: i128) -> Result<(), Self::Error>;
 
-    #[cfg(target_pointer_width = "128")]
-    #[inline]
-    fn parse_isize(i: isize) -> Result<Self, Self::Error> {
-        Self::parse_i128(i as i128)
-    }
-
     #[cfg(not(any(
-        target_pointer_width = "128",
         target_pointer_width = "32",
-        target_pointer_width = "16",
-        target_pointer_width = "8"
+        target_pointer_width = "16"
     )))]
     #[inline]
     fn parse_isize(i: isize) -> Result<Self, Self::Error> {
@@ -33,12 +25,6 @@ pub trait ValidateSignedInteger: Sized {
     #[inline]
     fn parse_isize(i: isize) -> Result<Self, Self::Error> {
         Self::parse_i16(i as i16)
-    }
-
-    #[cfg(target_pointer_width = "8")]
-    #[inline]
-    fn parse_isize(i: isize) -> Result<Self, Self::Error> {
-        Self::parse_i8(i as i8)
     }
 
     #[inline]
@@ -61,17 +47,9 @@ pub trait ValidateSignedInteger: Sized {
         Self::parse_i16(i as i16)
     }
 
-    #[cfg(target_pointer_width = "128")]
-    #[inline]
-    fn validate_isize(i: isize) -> Result<(), Self::Error> {
-        Self::validate_i128(i as i128)
-    }
-
     #[cfg(not(any(
-        target_pointer_width = "128",
         target_pointer_width = "32",
-        target_pointer_width = "16",
-        target_pointer_width = "8"
+        target_pointer_width = "16"
     )))]
     #[inline]
     fn validate_isize(i: isize) -> Result<(), Self::Error> {
@@ -88,12 +66,6 @@ pub trait ValidateSignedInteger: Sized {
     #[inline]
     fn validate_isize(i: isize) -> Result<(), Self::Error> {
         Self::validate_i16(i as i16)
-    }
-
-    #[cfg(target_pointer_width = "8")]
-    #[inline]
-    fn validate_isize(i: isize) -> Result<(), Self::Error> {
-        Self::validate_i8(i as i8)
     }
 
     #[inline]

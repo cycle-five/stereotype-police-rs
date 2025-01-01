@@ -12,6 +12,7 @@ use crate::{
 pub(crate) struct Base64UrlDecodedHandler;
 
 #[derive(Debug)]
+#[allow(dead_code)]
 pub struct Struct(TypeEnum);
 
 const ITEM: Struct = Struct(TypeEnum::VecU8);

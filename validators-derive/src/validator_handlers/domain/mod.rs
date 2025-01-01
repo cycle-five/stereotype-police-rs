@@ -14,6 +14,7 @@ use crate::{
 pub(crate) struct DomainHandler;
 
 #[derive(Debug)]
+#[allow(dead_code)]
 pub struct Struct(TypeEnum);
 
 #[derive(Educe)]
